@@ -1,0 +1,52 @@
+<mxfile host="Electron" modified="2023-07-31T12:26:49.578Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.1 Chrome/112.0.5615.204 Electron/24.6.1 Safari/537.36" etag="XyCOkBPEYBjDtkk3JxuF" version="21.6.1" type="device">
+  <diagram name="Page-1" id="aZoYFjF4gJ09JiYEHbDs">
+    <mxGraphModel dx="1418" dy="820" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="RLZwI48CuLSAFzdiG5ye-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="RLZwI48CuLSAFzdiG5ye-1" target="RLZwI48CuLSAFzdiG5ye-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RLZwI48CuLSAFzdiG5ye-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="RLZwI48CuLSAFzdiG5ye-1" target="RLZwI48CuLSAFzdiG5ye-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RLZwI48CuLSAFzdiG5ye-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="RLZwI48CuLSAFzdiG5ye-1" target="RLZwI48CuLSAFzdiG5ye-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RLZwI48CuLSAFzdiG5ye-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="RLZwI48CuLSAFzdiG5ye-1" target="RLZwI48CuLSAFzdiG5ye-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RLZwI48CuLSAFzdiG5ye-1" value="HOME&lt;br&gt;1- register&lt;br&gt;2- Login&lt;br&gt;3-Recepti" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="330" y="30" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="RLZwI48CuLSAFzdiG5ye-2" value="ADMIN&lt;br&gt;- dodavanje kuvara&lt;br&gt;-logout&lt;br&gt;-pregled svih recepata&lt;br&gt;-pregled svih alergena&lt;br&gt;-dodavanje alergena&lt;br&gt;-brisanje alergena&lt;br&gt;-prikaz&amp;nbsp; individualnog recepta" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="50" y="250" width="170" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="RLZwI48CuLSAFzdiG5ye-4" value="KUVAR&lt;br&gt;-Kreiraj Recept&lt;br&gt;-logout" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="270" y="350" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RLZwI48CuLSAFzdiG5ye-6" value="REG. KORISNIK&lt;br&gt;-Svi recepti&lt;br&gt;-Moji Recepti&lt;br&gt;-Moj Kuvar&lt;br&gt;-Moji alergeni&lt;br&gt;-logout" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="400" y="350" width="140" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="RLZwI48CuLSAFzdiG5ye-8" value="NEREG. KORISNIK&lt;br&gt;-Svi Recepti" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="600" y="260" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RLZwI48CuLSAFzdiG5ye-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="RLZwI48CuLSAFzdiG5ye-10" target="RLZwI48CuLSAFzdiG5ye-11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RLZwI48CuLSAFzdiG5ye-10" value="RECEPT&lt;br&gt;(navbar)&lt;br&gt;- Dodaj u Moje Recepte&lt;br&gt;-back dugme&lt;br&gt;-za kuvare i admine &quot;obrisi recept&quot;&lt;br&gt;&lt;br&gt;(body)&lt;br&gt;-naziv&lt;br&gt;Opis&lt;br&gt;-Nacin pripreme&lt;br&gt;-vreme pripreme&lt;br&gt;-broj porcija&lt;br&gt;-- lista sa spiskom sastojaka (-sastojak - Kolicina" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="130" y="640" width="250" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="RLZwI48CuLSAFzdiG5ye-11" value="SASTOJAK&lt;br&gt;-naziv&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;-jedinica mere sastojka&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;-hranljivost (&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;-Broj kalorija&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&#x9;&lt;span style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;-Grami uglj hidr. &quot;Od toga seceri&quot;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;-Grami masti &quot;Od toga zasicenih&quot;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;-Grami proteina&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;)&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;-Alergeni( Nema, ili koji su)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="430" y="685" width="190" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="RLZwI48CuLSAFzdiG5ye-13" value="REGISTER FORM&lt;br&gt;-Username&lt;br&gt;-Pass&lt;br&gt;-Pass again" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="730" y="30" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RLZwI48CuLSAFzdiG5ye-14" value="LOGIN FORM&lt;br&gt;-Username&lt;br&gt;-Pass" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="890" y="30" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
