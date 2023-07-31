@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Navbar.css';
 import Button from '@mui/material/Button';
 import HomeIcon from '@mui/icons-material/Home';
@@ -9,6 +9,8 @@ import CookIcon from '@mui/icons-material/Restaurant';
 import UserIcon from '@mui/icons-material/Person';
 import UnregisteredUserIcon from '@mui/icons-material/PersonOutline';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import Ingredients from './Ingredients'; // Importujemo Ingredients modal
+
 
 const Navbar = ({
   onLoginClick,
@@ -21,6 +23,16 @@ const Navbar = ({
   onBackClick,
   onRecipeClick,
 }) => {
+  const [ingredientsOpen, setIngredientsOpen] = useState(false);
+
+  const handleIngredientsOpen = () => {
+    setIngredientsOpen(true);
+  };
+
+  const handleIngredientsClose = () => {
+    setIngredientsOpen(false);
+  };
+
   return (
     <nav className="navbar">
       <ul>
@@ -69,7 +81,16 @@ const Navbar = ({
             Back
           </Button>
         </li>
+        <li>
+          {/* Dodajemo dugme za otvaranje Ingredients modala */}
+          <Button onClick={handleIngredientsOpen} startIcon={<CookIcon  />}>
+            Sastojak
+          </Button>
+        </li>
       </ul>
+
+      {/* Renderujemo Ingredients modal */}
+      <Ingredients open={ingredientsOpen} onClose={handleIngredientsClose} />
     </nav>
   );
 };
