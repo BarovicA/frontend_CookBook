@@ -8,13 +8,14 @@ import { styled } from '@mui/material/styles';
 const StyledLogo = styled('img')`
   width: 100%;
   max-width: 1100px;
-  border-radius: 10px;
+  border-radius: 200px;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
   &.show {
     opacity: 1;
   }
-    border: 10px solid red;
+    border: 10px solid green;
+    border-opacity: 0.5;
 `;
 
 const UnregisteredUser = ({ 
@@ -37,18 +38,16 @@ const UnregisteredUser = ({
 
   return (
     <Box sx={{ textAlign: 'center' }}>
-      <Typography variant="h4" component="h2" gutterBottom>
-        Unregistered User Panel
-      </Typography>
-      <Button onClick={onHomeClick} variant="contained" color="primary" sx={{ mr: 1 }}>
-        Home
-      </Button>
+      
       <Button onClick={onRegisterClick} variant="contained" color="secondary" sx={{ mr: 1 }}>
         Register
       </Button>
-      <Button onClick={onLoginClick} variant="contained" color="info">
+      <Button onClick={onLoginClick} variant="contained" color="warning">
         Login
       </Button>
+      <Typography variant="h3" component="h2" gutterBottom>
+        Dobrodošli u Interaktivni kuvar
+      </Typography>
       <Box sx={{ marginTop: '20px' }}>
         {/* Dodajemo klasu "show" na sliku kako bi se postepeno pojavila */}
         <StyledLogo src={logo} alt="Logo" className={showLogo ? 'show' : ''} />
