@@ -18,3 +18,8 @@ npm install react-image-file-resizer
 5 react router dom
 npm install react-router-dom
 
+6 MUI material
+npm install @mui/material
+
+7 react color
+npm install react-color

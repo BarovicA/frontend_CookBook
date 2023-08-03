@@ -35,7 +35,6 @@ const Administrator = ({ onHomeClick }) => {
       <Button variant="contained" color="warning">Pregled Svih Alergena</Button>
       <Button variant="contained" color="error">Logout</Button>
       <Box sx={{ marginTop: '20px' }}>
-        {/* Dodajemo klasu "show" na sliku kako bi se postepeno pojavila */}
         <StyledAdminImage src={adminImage} alt="Administrator" className={showAdminImage ? 'show' : ''} />
       </Box>
     </Box>

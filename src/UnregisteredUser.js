@@ -49,7 +49,7 @@ const UnregisteredUser = ({
         Dobrodošli u Interaktivni kuvar
       </Typography>
       <Box sx={{ marginTop: '20px' }}>
-        {/* Dodajemo klasu "show" na sliku kako bi se postepeno pojavila */}
+
         <StyledLogo src={logo} alt="Logo" className={showLogo ? 'show' : ''} />
       </Box>
     </Box>
