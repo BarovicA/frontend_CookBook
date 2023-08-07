@@ -114,6 +114,11 @@ function App() {
             onUnregisteredUserClick={handleUnregisteredUserClick}
             onRecipeClick={handleRecipeClick}
           />
+<<<<<<< Updated upstream
+=======
+        <Outlet/>
+
+>>>>>>> Stashed changes
         </div>
         <div>
           {isLoginVisible ? (
