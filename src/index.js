@@ -61,10 +61,10 @@ const router = createBrowserRouter([
         return fetch("http://localhost:8080/api/v1/cookUser");
         },
       },
-      {
-        path:'add_new_cook',
-        element:<CookNew/>
-        },
+      // {
+      //   path:'add_new_cook',
+      //   element:<CookNew/>
+      //   },
         // {
         //   path: '/:id',
         //   element:<RecipeDetails/>,

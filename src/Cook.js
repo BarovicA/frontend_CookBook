@@ -10,27 +10,27 @@ import CookShow from './CookShow';
 
 const Cook = ({ onHomeClick }) => {
 
-const[cooks, setCooks] = useState([]);
+// const[cooks, setCooks] = useState([]);
 
-  useEffect(() =>{
-    let ignore = false;
-    const fetchCooks = async ()=>{
-      let r = await fetch("http://localhost:8080/api/v1/cookUser");
-      let rr = await r.json();
-      if(!ignore){
-        setCooks(rr);
-      }
-    }
-    fetchCooks();
-    return()=>{
-      ignore = true;
-    }
-  }, []);
+//   useEffect(() =>{
+//     let ignore = false;
+//     const fetchCooks = async ()=>{
+//       let r = await fetch("http://localhost:8080/api/v1/cookUser");
+//       let rr = await r.json();
+//       if(!ignore){
+//         setCooks(rr);
+//       }
+//     }
+//     fetchCooks();
+//     return()=>{
+//       ignore = true;
+//     }
+//   }, []);
 
-console.log(cooks);
+// console.log(cooks);
 
-const[search, setSearch] = useState("");
-const filterCook = cooks.filter((c)=>c.username.toLowerCase().includes(search.toLowerCase()));
+// const[search, setSearch] = useState("");
+// const filterCook = cooks.filter((c)=>c.username.toLowerCase().includes(search.toLowerCase()));
 
   return (
     <div>
@@ -49,13 +49,13 @@ const filterCook = cooks.filter((c)=>c.username.toLowerCase().includes(search.to
         Logout
       </Button>
     </div>
-    <div>
+    {/* <div>
     <TextField size='small' id='outlined-search' label="pretraga po usernam kuvara"
     type='search' sx={{backgroundColor:"whitesmoke"}}
     onChange={(e)=>setSearch(e.target.value.toLowerCase())}/>
     <Button size='normal' variant='contained' sx={{backgroundColor:"whitesmoke", color:"black"}}>Search</Button>
     {filterCook.map((c) => <CookShow cook={c}/>)}
-    </div>
+    </div> */}
     </div>
   );
 };
