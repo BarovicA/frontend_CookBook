@@ -7,12 +7,22 @@ import HomeIcon from '@mui/icons-material/Home';
 import registerImage from './register.jpg';
 
 const RegisterForm = ({ onHomeClick }) => {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [passwordsMatch, setPasswordsMatch] = useState(true);
   const [passwordRequirementsMet, setPasswordRequirementsMet] = useState(true);
   const [usernameLengthMet, setUsernameLengthMet] = useState(true);
+
+  const handleFirstNameChange = (event) => {
+    setFirstName(event.target.value);
+  };
+
+  const handleLastNameChange = (event) => {
+    setLastName(event.target.value);
+  };
 
   const handleUsernameChange = (event) => {
     const value = event.target.value;
@@ -28,7 +38,7 @@ const RegisterForm = ({ onHomeClick }) => {
     setConfirmPassword(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     if (password !== confirmPassword) {
@@ -47,8 +57,31 @@ const RegisterForm = ({ onHomeClick }) => {
 
     setPasswordRequirementsMet(true);
 
-    console.log('Username:', username);
-    console.log('Password:', password);
+    // Priprema podataka za slanje
+    const userData = {
+      firstName,
+      lastName,
+      username,
+      password,
+    };
+
+    try {
+      const response = await fetch('http://localhost:8080/api/v1/regularuser/create', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userData),
+      });
+
+      if (response.ok) {
+        console.log('User successfully registered!');
+      } else {
+        console.error('Registration failed.');
+      }
+    } catch (error) {
+      console.error('An error occurred:', error);
+    }
   };
 
   return (
@@ -77,6 +110,24 @@ const RegisterForm = ({ onHomeClick }) => {
       <form onSubmit={handleSubmit}>
         <div>
           <TextField
+            label="Ime"
+            variant="outlined"
+            value={firstName}
+            onChange={handleFirstNameChange}
+            sx={{ backgroundColor: 'rgba(255, 255, 255, 0.9)', mb: 2 }}
+          />
+        </div>
+        <div>
+          <TextField
+            label="Prezime"
+            variant="outlined"
+            value={lastName}
+            onChange={handleLastNameChange}
+            sx={{ backgroundColor: 'rgba(255, 255, 255, 0.9)', mb: 2 }}
+          />
+        </div>
+        <div>
+          <TextField
             label="Korisnicko ime"
             variant="outlined"
             value={username}
@@ -94,7 +145,7 @@ const RegisterForm = ({ onHomeClick }) => {
             value={password}
             onChange={handlePasswordChange}
             error={!passwordRequirementsMet}
-            helperText={!passwordRequirementsMet ? "Lozinka treba da sadrzi, jedno veliko slovo, jedno malo slovo jedan broj i da bude minimalno 3 karaktera duzine" : ""}
+            helperText={!passwordRequirementsMet ? "Lozinka treba da sadrzi, jedno veliko slovo, jedno malo slovo, jedan broj i da bude minimalno 3 karaktera duzine" : ""}
             sx={{ backgroundColor: 'rgba(255, 255, 255, 0.9)', mb: 2 }}
           />
         </div>
@@ -115,7 +166,7 @@ const RegisterForm = ({ onHomeClick }) => {
         </Button>
         <div className="requirements">
           <p style={{ fontSize: '12px' }}>
-            Lozinka treba da sadrzi, jedno veliko slovo, jedno malo slovo jedan broj i da bude minimalno 3 karaktera duzine 
+            Lozinka treba da sadrzi, jedno veliko slovo, jedno malo slovo, jedan broj i da bude minimalno 3 karaktera duzine 
           </p>
           <p style={{ fontSize: '12px' }}>
             Korisnicko ime mora da ima barem 4 karaktera
