@@ -9,6 +9,8 @@ import Cook from './Cook';
 import User from './User';
 import UnregisteredUser from './UnregisteredUser';
 import Recipe from './Recipe';
+import { Outlet } from 'react-router';
+import { Switch } from '@mui/material';
 
 function App() {
   const [isLoginVisible, setIsLoginVisible] = useState(false);
@@ -100,7 +102,7 @@ function App() {
   };
 
   return (
-    
+    <div>
     <div className="App">
       <header className="App-header">
         <div>
@@ -114,6 +116,8 @@ function App() {
             onUnregisteredUserClick={handleUnregisteredUserClick}
             onRecipeClick={handleRecipeClick}
           />
+        <Outlet></Outlet>
+
         </div>
         <div>
           {isLoginVisible ? (
@@ -135,6 +139,7 @@ function App() {
           )}
         </div>
       </header>
+    </div>
     </div>
   );
 }

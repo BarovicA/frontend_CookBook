@@ -3,11 +3,94 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Cook from './Cook';
+import RecipeNew from './RecipeNew';
+import Recipe from './Recipe';
+import { async } from 'q';
+import ShowRecipe from './RecipeShow';
+import RecipeDetails from './RecipeDetails';
+import RecipeShow from './RecipeShow';
+import RecipeEdit from './RecipeEdit';
+import CookNew from './CookNew';
+import CookShow from './CookShow';
+
+const router = createBrowserRouter([
+{
+  path:'/',
+  element:<App/>,
+  children:[
+    {
+    path:'/recipes',
+    element:<Recipe/>,
+    loader: async()=>{
+      return fetch("http://localhost:8080/api/v1/recipes");
+    },
+    },
+    {
+    path:'add_new_recipe',
+    element:<RecipeNew/>
+    },
+    {
+      path: '/:id',
+      element:<RecipeDetails/>,
+      loader: async({params}) =>{
+        return fetch(`http://localhost:8080/api/v1/recipes/${params.id}`)
+ 
+          }
+    },
+    {
+      path: '/:id',
+      element:<RecipeShow/>,
+      loader: async({params}) =>{
+        return fetch(`http://localhost:8080/api/v1/recipes/${params.id}`)
+ 
+          }
+    },
+    {
+      path: 'recipes/update/:id',
+      element:<RecipeEdit/>,
+      loader: async({params}) =>{
+        return fetch(`http://localhost:8080/api/v1/recipes/${params.id}`)
+      }
+    },
+    {
+      path: '/cookUser',
+      element:<Cook/>,
+      loader: async()=>{
+        return fetch("http://localhost:8080/api/v1/cookUser");
+        },
+      },
+      // {
+      //   path:'add_new_cook',
+      //   element:<CookNew/>
+      //   },
+        // {
+        //   path: '/:id',
+        //   element:<RecipeDetails/>,
+        //   loader: async({params}) =>{
+        //     return fetch(`http://localhost:8080/api/v1/recipes/${params.id}`)
+     
+        //       }
+        // },
+        // {
+        //   path: '/:id',
+        //   element:<CookShow/>,
+        //   loader: async({params}) =>{
+        //     return fetch(`http://localhost:8080/api/v1/cookUser/${params.id}`)
+     
+        //       }
+        // },
+  
+ 
+  ]
+}
+])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router}/>
   </React.StrictMode>
 );
 
