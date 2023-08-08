@@ -35,9 +35,7 @@ const Administrator = ({ onHomeClick }) => {
         </NavLink>
         </Button>
       <Button variant="contained" color="primary">
-        <NavLink to="/recipes">
         Pregled Svih Recepata
-        </NavLink>
       </Button>
       <Button variant="contained" color="warning">Pregled Svih Alergena</Button>
       <Button variant="contained" color="error">Logout</Button>
