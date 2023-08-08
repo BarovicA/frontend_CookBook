@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
+import { NavLink } from 'react-router-dom';
 
 const StyledAdminImage = styled('img')`
   width: 100%;
@@ -28,7 +29,11 @@ const Administrator = ({ onHomeClick }) => {
   return (
     <Box sx={{ textAlign: 'center' }}>
       <Typography variant="h2">Administrator Panel</Typography>
-      <Button variant="contained" color="secondary">Dodaj Kuvara</Button>
+      <Button variant="contained" color="secondary">
+        <NavLink to="add_new_cook">
+        Dodaj Kuvara
+        </NavLink>
+        </Button>
       <Button variant="contained" color="primary">
         <NavLink to="/recipes">
         Pregled Svih Recepata

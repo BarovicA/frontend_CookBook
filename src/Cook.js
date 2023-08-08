@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { Link, NavLink, useLoaderData, useNavigate} from 'react-router-dom';
+import RecipeNew from './RecipeNew';
+import { TextField } from '@mui/material';
+import CookShow from './CookShow';
+
+
 
 const Cook = ({ onHomeClick }) => {
-<<<<<<< Updated upstream
-=======
 
 // const[cooks, setCooks] = useState([]);
 
@@ -28,23 +32,23 @@ const Cook = ({ onHomeClick }) => {
 // const[search, setSearch] = useState("");
 // const filterCook = cooks.filter((c)=>c.username.toLowerCase().includes(search.toLowerCase()));
 
->>>>>>> Stashed changes
   return (
+    <div>
     <div>
       <Typography variant="h2">Cook Panel</Typography>
       {}
       <Button onClick={onHomeClick} variant="contained" color="primary">
         Home
       </Button>
-      <Button variant="contained" color="primary">
-        Add Recipe
+      <Button variant="contained" color="primary" >
+        <NavLink to="add_new_recipe">
+      Add Recipe
+      </NavLink>
       </Button>
       <Button variant="contained" color="primary">
         Logout
       </Button>
     </div>
-<<<<<<< Updated upstream
-=======
     {/* <div>
     <TextField size='small' id='outlined-search' label="pretraga po usernam kuvara"
     type='search' sx={{backgroundColor:"whitesmoke"}}
@@ -53,7 +57,6 @@ const Cook = ({ onHomeClick }) => {
     {filterCook.map((c) => <CookShow cook={c}/>)}
     </div> */}
     </div>
->>>>>>> Stashed changes
   );
 };
 
