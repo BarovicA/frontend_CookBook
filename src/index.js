@@ -12,8 +12,8 @@ import ShowRecipe from './RecipeShow';
 import RecipeDetails from './RecipeDetails';
 import RecipeShow from './RecipeShow';
 import RecipeEdit from './RecipeEdit';
-import CookNew from './CookNew';
-import CookShow from './CookShow';
+// import CookNew from './CookNew';
+// import CookShow from './CookShow';
 
 const router = createBrowserRouter([
 {
@@ -28,8 +28,8 @@ const router = createBrowserRouter([
     },
     },
     {
-    path:'add_new_recipe',
-    element:<RecipeNew/>
+    // path:'add_new_recipe',          jbg, morao sam da se ne pojavljuje
+    // element:<RecipeNew/>
     },
     {
       path: '/:id',
@@ -61,10 +61,10 @@ const router = createBrowserRouter([
         return fetch("http://localhost:8080/api/v1/cookUser");
         },
       },
-      {
-        path:'add_new_cook',
-        element:<CookNew/>
-        },
+      //{
+       // path:'add_new_cook',
+       // element:<CookNew/>
+       // },
         // {
         //   path: '/:id',
         //   element:<RecipeDetails/>,
