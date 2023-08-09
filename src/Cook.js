@@ -4,9 +4,18 @@ import Button from '@mui/material/Button';
 import { NavLink } from 'react-router-dom';
 import { Dialog, DialogTitle, DialogContent, DialogActions } from '@mui/material';
 import RecipeNew from './RecipeNew';
+import cookImage from './cook.jpg';
 
 const Cook = ({ onHomeClick }) => {
   const [openAddRecipeModal, setOpenAddRecipeModal] = useState(false);
+
+  const handleOpenAddRecipeModal = () => {
+    setOpenAddRecipeModal(true);
+  };
+
+  const handleCloseAddRecipeModal = () => {
+    setOpenAddRecipeModal(false);
+  };
 
   return (
     <div>
@@ -18,7 +27,7 @@ const Cook = ({ onHomeClick }) => {
         <Button
           variant="contained"
           color="primary"
-          onClick={() => setOpenAddRecipeModal(true)}
+          onClick={handleOpenAddRecipeModal}
         >
           <NavLink to="add_new_recipe">Add Recipe</NavLink>
         </Button>
@@ -27,23 +36,27 @@ const Cook = ({ onHomeClick }) => {
         </Button>
       </div>
 
+      
       <Dialog
         open={openAddRecipeModal}
-        onClose={() => setOpenAddRecipeModal(false)}
+        onClose={handleCloseAddRecipeModal}
       >
         <DialogTitle>Add New Recipe</DialogTitle>
         <DialogContent>
-          <RecipeNew onClose={() => setOpenAddRecipeModal(false)} />
+          <RecipeNew onClose={handleCloseAddRecipeModal} />
         </DialogContent>
         <DialogActions>
           <Button
-            onClick={() => setOpenAddRecipeModal(false)}
+            onClick={handleCloseAddRecipeModal}
             color="primary"
           >
             Cancel
           </Button>
         </DialogActions>
       </Dialog>
+
+     
+      <img src={cookImage} alt="Cook" style={{ width: '100%', maxWidth: '1100px', borderRadius: '200px', opacity: '1', transition: 'opacity 0.5s ease-in-out', border: '10px solid green', borderOpacity: '0.5' }} />
     </div>
   );
 };
