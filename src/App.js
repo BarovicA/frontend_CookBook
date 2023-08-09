@@ -11,6 +11,8 @@ import UnregisteredUser from './UnregisteredUser';
 import Recipe from './Recipe';
 import { Outlet } from 'react-router';
 import { Switch } from '@mui/material';
+import { Modal } from '@mui/material';
+import RecipeShow from './RecipeShow';
 
 function App() {
   const [isLoginVisible, setIsLoginVisible] = useState(false);
@@ -116,7 +118,13 @@ function App() {
             onUnregisteredUserClick={handleUnregisteredUserClick}
             onRecipeClick={handleRecipeClick}
           />
+
+        
+
+
+          <div className='proba'>
         <Outlet></Outlet>
+        </div>
 
         </div>
         <div>
