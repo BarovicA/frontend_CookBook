@@ -104,7 +104,6 @@ function App() {
   };
 
   return (
-    <div>
     <div className="App">
       <header className="App-header">
         <div>
@@ -119,13 +118,9 @@ function App() {
             onRecipeClick={handleRecipeClick}
           />
 
-        
-
-
           <div className='proba'>
-        <Outlet></Outlet>
-        </div>
-
+            <Outlet></Outlet>
+          </div>
         </div>
         <div>
           {isLoginVisible ? (
@@ -139,7 +134,11 @@ function App() {
           ) : isUserVisible ? (
             <User onHomeClick={handleHomeClick} />
           ) : isUnregisteredUserVisible ? (
-            <UnregisteredUser onHomeClick={handleHomeClick} />
+            <UnregisteredUser
+              onHomeClick={handleHomeClick}
+              onRegisterClick={handleRegisterClick}
+              onLoginClick={handleLoginClick}
+            />
           ) : isRecipeVisible ? (
             <Recipe />
           ) : (
@@ -148,8 +147,7 @@ function App() {
         </div>
       </header>
     </div>
-    </div>
   );
 }
 
-export default App
+export default App;

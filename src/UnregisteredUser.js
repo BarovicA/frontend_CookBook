@@ -14,31 +14,23 @@ const StyledLogo = styled('img')`
   &.show {
     opacity: 1;
   }
-    border: 10px solid green;
-    border-opacity: 0.5;
+  border: 10px solid green;
+  border-opacity: 0.5;
 `;
 
 const UnregisteredUser = ({ 
   onHomeClick,
   onRegisterClick, 
-  onLoginClick, }) => {
+  onLoginClick,
+}) => {
   const [showLogo, setShowLogo] = useState(false);
 
   useEffect(() => {
     setShowLogo(true);
   }, []);
 
-  const handleRegisterClick = () => {
-    console.log('Register button clicked');
-  };
-
-  const handleLoginClick = () => {
-    console.log('Login button clicked');
-  };
-
   return (
     <Box sx={{ textAlign: 'center' }}>
-      
       <Button onClick={onRegisterClick} variant="contained" color="secondary" sx={{ mr: 1 }}>
         Register
       </Button>
@@ -49,7 +41,6 @@ const UnregisteredUser = ({
         Dobrodošli u Interaktivni kuvar
       </Typography>
       <Box sx={{ marginTop: '20px' }}>
-
         <StyledLogo src={logo} alt="Logo" className={showLogo ? 'show' : ''} />
       </Box>
     </Box>

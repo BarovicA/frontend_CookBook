@@ -46,16 +46,7 @@ const Navbar = ({
             Administrator
           </Button>
         </li>
-        <li>
-          <Button onClick={onRegisterClick} startIcon={<RegisterIcon />}>
-            Registruj se
-          </Button>
-        </li>
-        <li>
-          <Button onClick={onLoginClick} startIcon={<LoginIcon />}>
-            Login
-          </Button>
-        </li>
+    
         <li>
           <Button onClick={onCookClick} startIcon={<CookIcon />}>
             Cook
@@ -76,17 +67,17 @@ const Navbar = ({
             Recipe
           </Button>
         </li>
-        <li>
+        {/* <li>
           <Button onClick={onBackClick} startIcon={<ArrowBackIcon />}>
             Back
           </Button>
         </li>
-        <li>
+        <li> */}
           {/* Dodajemo dugme za otvaranje Ingredients modala */}
-          <Button onClick={handleIngredientsOpen} startIcon={<CookIcon  />}>
+          {/* <Button onClick={handleIngredientsOpen} startIcon={<CookIcon  />}>
             Sastojak
-          </Button>
-        </li>
+          </Button> */}
+        {/* </li> */}
       </ul>
 
       {/* Renderujemo Ingredients modal */}
