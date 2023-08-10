@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, createContext } from 'react';
 import Navbar from './Navbar';
 import DefaultBody from './DefaultBody';
 import LoginForm from './LoginForm';
@@ -10,9 +10,11 @@ import User from './User';
 import UnregisteredUser from './UnregisteredUser';
 import Recipe from './Recipe';
 import { Outlet } from 'react-router';
-import { Switch } from '@mui/material';
-import { Modal } from '@mui/material';
-import RecipeShow from './RecipeShow';
+
+import { useLogin } from "./login_logic";
+import { AppBar, Box, Divider, Drawer, IconButton, Stack, Toolbar, Typography, Button, createTheme, ThemeProvider, CssBaseline, FormGroup, FormControlLabel, Switch} from "@mui/material";
+
+export const UserContext = createContext(null);
 
 function App() {
   const [isLoginVisible, setIsLoginVisible] = useState(false);
@@ -22,6 +24,7 @@ function App() {
   const [isUserVisible, setIsUserVisible] = useState(false);
   const [isUnregisteredUserVisible, setIsUnregisteredUserVisible] = useState(true);
   const [isRecipeVisible, setIsRecipeVisible] = useState(false);
+  const [user, login, logout] = useLogin();
 
   const handleLoginClick = () => {
     setIsLoginVisible(true);
@@ -104,6 +107,9 @@ function App() {
   };
 
   return (
+
+      <UserContext.Provider value={{user, login, logout}}>
+      <CssBaseline/>
     <div className="App">
       <header className="App-header">
         <div>
@@ -147,6 +153,7 @@ function App() {
         </div>
       </header>
     </div>
+    </UserContext.Provider>
   );
 }
 
