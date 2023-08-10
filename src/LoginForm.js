@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
+import React, { useState, useContext } from 'react';
+import { UserContext } from "./App"
+import { Button, Box, TextField, Typography } from "@mui/material";
 import HomeIcon from '@mui/icons-material/Home';
 import loginImage from './login.jpg';
+import { useNavigate } from "react-router-dom";
 
-const LoginForm = ({ onHomeClick }) => {
+const LoginForm = ({safePath, defaultPath, onHomeClick }) => {
+  const {user, login, logout} = useContext(UserContext);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState(false);
+  const nav = useNavigate();
+  const [open, setOpen] = useState(false);
 
   const handleUsernameChange = (event) => {
     const value = event.target.value;
@@ -17,6 +21,17 @@ const LoginForm = ({ onHomeClick }) => {
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
+
+  const handleLogin = () => {
+        const u = login(username, password); 
+        if(u === null){
+          setError(true);
+      }else{
+          setError(false);
+          setOpen(false);
+          nav(defaultPath);
+      }
+    }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -46,11 +61,49 @@ const LoginForm = ({ onHomeClick }) => {
         <Button onClick={onHomeClick} startIcon={<HomeIcon />}>
           Home
         </Button>
+        {/* <Button variant="outlined" onClick={e => {
+            if(user === null){
+                setOpen(true);
+            }else{
+                logout();
+                nav(safePath);
+            }
+        }
+        }>
+            {(user) ? "Logout" : "Login"}
+        </Button> */}
       </div>
       <h2>Uloguj se</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <TextField
+
+        <TextField
+                    autoFocus
+                    id="username"
+                    label="Username"
+                    type="text"
+                    variant="outlined"
+                    sx={{ backgroundColor: 'rgba(255, 255, 255, 0.9)', mb: 2 }}
+                    value={username}
+                    onChange={e => setUsername(e.target.value)}
+                    margin="dense"
+                />
+                </div>
+                <div>
+                <TextField
+                    id="password"
+                    label="Lozinka"
+                    type="password"
+                    variant="outlined"
+                    sx={{ backgroundColor: 'rgba(255, 255, 255, 0.9)', mb: 2 }}
+                    value={password}
+                    onChange={e => setPassword(e.target.value)}
+                    margin="dense"
+                />
+            {error && <Typography sx={{color: 'red'}}>Pogrešno korisničko ime ili lozinka.</Typography>}
+
+
+          {/* <TextField
             label="Korisnicko ime"
             variant="outlined"
             value={username}
@@ -66,9 +119,9 @@ const LoginForm = ({ onHomeClick }) => {
             value={password}
             onChange={handlePasswordChange}
             sx={{ backgroundColor: 'rgba(255, 255, 255, 0.9)', mb: 2 }}
-          />
+          /> */}
         </div>
-        <Button type="submit" variant="contained" color="primary">
+        <Button type="submit" variant="contained" color="primary" onClick={handleLogin}>
           Login
         </Button>
       </form>
