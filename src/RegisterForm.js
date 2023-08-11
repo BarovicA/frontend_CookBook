@@ -68,8 +68,12 @@ const RegisterForm = ({ onHomeClick }) => {
     try {
       const response = await fetch('http://localhost:8080/api/v1/regularuser/create', {
         method: 'POST',
+        mode: 'cors',
         headers: {
           'Content-Type': 'application/json',
+            'Accept': '*/*',
+            'Origin': 'http://localhost:3000',
+            'Authorization': JSON.parse(localStorage.getItem('user')).token
         },
         body: JSON.stringify(userData),
       });
