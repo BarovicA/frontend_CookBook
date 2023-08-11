@@ -25,14 +25,15 @@ const Administrator = ({ onHomeClick }) => {
   useEffect(() => {
     setShowAdminImage(true);
   }, []);
+  
 
   return (
     <Box sx={{ textAlign: 'center' }}>
       <Typography variant="h2">Administrator Panel</Typography>
       <Button variant="contained" color="secondary">
-        {/* <NavLink to="add_new_cook"> */}
+        <NavLink to="add_new_cook">
         Dodaj Kuvara
-        {/* </NavLink> */}
+        </NavLink>
         </Button>
       <Button variant="contained" color="primary">
       <NavLink to="/recipes">
