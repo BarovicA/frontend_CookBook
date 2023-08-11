@@ -14,8 +14,13 @@ import RecipeShow from './RecipeShow';
 import RecipeEdit from './RecipeEdit';
 import CookNew from './CookNew';
 import CookShow from './CookShow';
+<<<<<<< Updated upstream
 // import CookDetails from './CookDetails';
 import CookEdit from './CookEdit';
+=======
+// import CookNew from './CookNew';
+// import CookShow from './CookShow';
+>>>>>>> Stashed changes
 
 const router = createBrowserRouter([
 {
@@ -65,18 +70,33 @@ const router = createBrowserRouter([
        },
         {
           path: '/:id',
+<<<<<<< Updated upstream
           element:<CookShow/>,
           loader: async({params}) =>{
             return fetch(`http://localhost:8080/api/v1/cookUser/${params.id}`)
+=======
+          element:<RecipeDetails/>,
+          loader: async({params}) =>{
+            return fetch(`http://localhost:8080/api/v1/recipes/${params.id}`)
+>>>>>>> Stashed changes
      
               }
         },
         {
+<<<<<<< Updated upstream
           path: 'cookUser/update/:id',
           element:<CookEdit/>,
           loader: async({params}) =>{
             return fetch(`http://localhost:8080/api/v1/cookUser/${params.id}`)
           }
+=======
+          path: '/:id',
+          element:<CookShow/>,
+          loader: async({params}) =>{
+            return fetch(`http://localhost:8080/api/v1/cookUser/${params.id}`)
+     
+              }
+>>>>>>> Stashed changes
         },
   
  

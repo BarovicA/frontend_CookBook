@@ -42,8 +42,16 @@ const handleDelete = async()=>{
             textAlign:"center", backgroundColor:"blue"}}/>
             <CardContent sx={{display:"flex", flexDirection:"column", alignContent:"center", flexWrap:"wrap",
             backgroundColor:"green"}}>
+<<<<<<< Updated upstream
                 <Typography>Username: {cook.username}</Typography>
             <Box>
+=======
+                <Typography>Name: {cook.username}</Typography>
+            <Box>
+                <InfoIcon sx={{cursor:"pointer"}} variant="outlined" onClick={()=>navigate(`/${cook.id}`)}>
+                    Details
+                </InfoIcon>
+>>>>>>> Stashed changes
                 <DeleteIcon sx={{cursor:"pointer"}} variant="outlined" onClick={()=>{setShowModal(true);
                 setCookUserId(cook.id)}}>
                     Delete
