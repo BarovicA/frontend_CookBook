@@ -16,6 +16,7 @@ import CookNew from './CookNew';
 import CookShow from './CookShow';
 // import CookDetails from './CookDetails';
 import CookEdit from './CookEdit';
+import CookDetails from './CookDetails';
 
 const router = createBrowserRouter([
 {
@@ -77,6 +78,14 @@ const router = createBrowserRouter([
           loader: async({params}) =>{
             return fetch(`http://localhost:8080/api/v1/cookUser/${params.id}`)
           }
+        },
+        {
+          path: 'cookUser/:id',
+          element:<CookDetails/>,
+          loader: async({params}) =>{
+            return fetch(`http://localhost:8080/api/v1/cookUser/${params.id}`)
+     
+              }
         },
   
  

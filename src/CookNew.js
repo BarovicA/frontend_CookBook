@@ -3,8 +3,8 @@ import { useState } from "react";
 
 const CookNew = () =>{
 
-    const[firstName, setFirstName] = useState("");
-    const[lastName, setLastName] = useState("");
+    const[firstname, setFirstname] = useState("");
+    const[lastname, setLastname] = useState("");
     const[username, setUsername] = useState("");
     const[password, setPassword] = useState("");
     const[showAlert, setShowAlert] = useState(false);
@@ -23,8 +23,8 @@ const CookNew = () =>{
                 "Content-Type":"application/json",
             },
             body: JSON.stringify({
-                firstName: firstName,
-                lastName: lastName,
+                firstname: firstname,
+                lastname: lastname,
                 username: username,
                 password: password
             })
@@ -51,11 +51,11 @@ return <Container sx={{justifyContent:"center", alignContent:"center", flexWrap:
                 if(e.target.value === ""){
                     setShowError(true);
                     setHelperText("Polje ne moze biti prazno");
-                    setFirstName(e.target.value);
+                    setFirstname(e.target.value);
                 }else{
                         setShowError(false);
                         setHelperText("");
-                        setFirstName(e.target.value);
+                        setFirstname(e.target.value);
                     
                 }
             }
@@ -71,11 +71,11 @@ return <Container sx={{justifyContent:"center", alignContent:"center", flexWrap:
                 if(e.target.value === ""){
                     setShowError(true);
                     setHelperText2("Polje ne moze biti prazno");
-                    setLastName(e.target.value);
+                    setLastname(e.target.value);
                 }else{
                         setShowError(false);
                         setHelperText2("");
-                        setLastName(e.target.value);
+                        setLastname(e.target.value);
                     
                 }
             }

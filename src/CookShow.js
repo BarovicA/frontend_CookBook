@@ -44,6 +44,9 @@ const handleDelete = async()=>{
             backgroundColor:"green"}}>
                 <Typography>Username: {cook.username}</Typography>
             <Box>
+            <InfoIcon sx={{cursor:"pointer"}} variant="outlined" onClick={()=>navigate(`cookUser/${cook.id}`)}>
+                    Details
+                </InfoIcon>
                 <DeleteIcon sx={{cursor:"pointer"}} variant="outlined" onClick={()=>{setShowModal(true);
                 setCookUserId(cook.id)}}>
                     Delete

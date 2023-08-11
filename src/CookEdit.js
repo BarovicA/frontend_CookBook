@@ -6,8 +6,8 @@ const CookEdit = () =>{
 
     const cooks = useLoaderData();
 
-    const[firstName, setFirstName] = useState(cooks.firstName);
-    const[lastName, setLastName] = useState(cooks.lastName);
+    const[firstname, setFirstname] = useState(cooks.firstName);
+    const[lastname, setLastname] = useState(cooks.lastName);
     const[username, setUsername] = useState(cooks.username);
     const[password, setPassword] = useState(cooks.password);
     const[showAlert, setShowAlert] = useState(false);
@@ -25,8 +25,8 @@ const CookEdit = () =>{
             "Content-Type":"application/json",
         },
         body: JSON.stringify({
-            firstName: firstName,
-            lastName: lastName,
+            firstname: firstname,
+            lastname: lastname,
             username: username,
             password: password
         }),
@@ -44,17 +44,17 @@ const CookEdit = () =>{
     return <Container sx={{justifyContent:"center", alignContent:"center", flexWrap:"wrap", width:"80%"}}>
     <Box sx={{display:"flex", width:"100%", flexDirection:"column", alignItems:"end"}}>
     <TextField sx={{width:"100%", marginBottom:1, backgroundColor:"whitesmoke"}} id="outlined-basic"
-    label="username" variant="outlined" type="text" value={firstName}
+    label="firstname" variant="outlined" type="text" value={firstname}
     onChange={
         (e)=>{
             if(e.target.value === ""){
                 setShowError(true);
                 setHelperText("Polje ne moze biti prazno");
-                setFirstName(e.target.value);
+                setFirstname(e.target.value);
             }else{
                     setShowError(false);
                     setHelperText("");
-                    setFirstName(e.target.value);
+                    setFirstname(e.target.value);
                 
             }
         }
@@ -64,17 +64,17 @@ const CookEdit = () =>{
      helperText={helperText}
      />
      <TextField sx={{width:"100%", marginBottom:1, backgroundColor:"whitesmoke"}} id="outlined-basic"
-    label="decription" variant="outlined" type="text" value={lastName}
+    label="lastname" variant="outlined" type="text" value={lastname}
     onChange={
         (e)=>{
             if(e.target.value === ""){
                 setShowError(true);
                 setHelperText2("Polje ne moze biti prazno");
-                setLastName(e.target.value);
+                setLastname(e.target.value);
             }else{
                     setShowError(false);
                     setHelperText2("");
-                    setLastName(e.target.value);
+                    setLastname(e.target.value);
                 
             }
         }
@@ -84,7 +84,7 @@ const CookEdit = () =>{
      helperText2={helperText2}
      />
          <TextField sx={{width:"100%", marginBottom:1, backgroundColor:"whitesmoke"}} id="outlined-basic"
-    label="steps" variant="outlined" type="text" value={username}
+    label="username" variant="outlined" type="text" value={username}
     onChange={
         (e)=>{
             if(e.target.value === ""){
@@ -104,7 +104,7 @@ const CookEdit = () =>{
      setHelperText3={helperText3}
      />
               <TextField sx={{width:"100%", marginBottom:1, backgroundColor:"whitesmoke"}} id="outlined-basic"
-    label="time to prepare" variant="outlined" type="text" value={password}
+    label="password" variant="outlined" type="text" value={password}
     onChange={
         (e)=>{
             if(e.target.value === ""){
