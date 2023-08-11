@@ -3,28 +3,18 @@ import { useState } from "react";
 
 const CookNew = () =>{
 
-<<<<<<< Updated upstream
-    const[firstName, setFirstName] = useState("");
-    const[lastName, setLastName] = useState("");
-    const[username, setUsername] = useState("");
-    const[password, setPassword] = useState("");
-=======
     const[firstname, setFirstname] = useState("");
     const[lastname, setLastname] = useState("");
     const[username, setUsername] = useState("");
     const[password, setPassword] = useState("");
     // const[role, setRole] = useState("");
->>>>>>> Stashed changes
     const[showAlert, setShowAlert] = useState(false);
     const[showError, setShowError] = useState(false);
     const[helperText, setHelperText] = useState("");
     const[helperText2, setHelperText2] = useState("");
     const[helperText3, setHelperText3] = useState("");
     const[helperText4, setHelperText4] = useState("");
-<<<<<<< Updated upstream
-=======
     const[helperText5, setHelperText5] = useState("");
->>>>>>> Stashed changes
 
 
     const addNewCook = async()=>{
@@ -35,18 +25,11 @@ const CookNew = () =>{
                 "Content-Type":"application/json",
             },
             body: JSON.stringify({
-<<<<<<< Updated upstream
-                firstName: firstName,
-                lastName: lastName,
-                username: username,
-                password: password
-=======
                 firstname: firstname,
                 lastname: lastname,
                 username: username,
                 password: password,
                 // role:[role]
->>>>>>> Stashed changes
             })
     });
     if(response.ok){
@@ -71,19 +54,11 @@ return <Container sx={{justifyContent:"center", alignContent:"center", flexWrap:
                 if(e.target.value === ""){
                     setShowError(true);
                     setHelperText("Polje ne moze biti prazno");
-<<<<<<< Updated upstream
-                    setFirstName(e.target.value);
-                }else{
-                        setShowError(false);
-                        setHelperText("");
-                        setFirstName(e.target.value);
-=======
                     setFirstname(e.target.value);
                 }else{
                         setShowError(false);
                         setHelperText("");
                         setFirstname(e.target.value);
->>>>>>> Stashed changes
                     
                 }
             }
@@ -99,19 +74,11 @@ return <Container sx={{justifyContent:"center", alignContent:"center", flexWrap:
                 if(e.target.value === ""){
                     setShowError(true);
                     setHelperText2("Polje ne moze biti prazno");
-<<<<<<< Updated upstream
-                    setLastName(e.target.value);
-                }else{
-                        setShowError(false);
-                        setHelperText2("");
-                        setLastName(e.target.value);
-=======
                     setLastname(e.target.value);
                 }else{
                         setShowError(false);
                         setHelperText2("");
                         setLastname(e.target.value);
->>>>>>> Stashed changes
                     
                 }
             }
@@ -160,8 +127,6 @@ return <Container sx={{justifyContent:"center", alignContent:"center", flexWrap:
          error= {showError}
          helperText4={helperText4}
          />
-<<<<<<< Updated upstream
-=======
             {/* <TextField sx={{width:"100%", marginBottom:1, backgroundColor:"whitesmoke"}} id="outlined-basic" label="expected yield" 
          variant="outlined" type="text"
          onChange={
@@ -182,7 +147,6 @@ return <Container sx={{justifyContent:"center", alignContent:"center", flexWrap:
          error= {showError}
          helperText5={helperText5}
          /> */}
->>>>>>> Stashed changes
          {showAlert &&<Alert sx={{width:"100%", marginBottom:4}} onClose={()=>{setShowAlert(false)}}>
             Novi kuvar je dodat
          </Alert>}
