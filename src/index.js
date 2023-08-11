@@ -5,15 +5,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Cook from './Cook';
-import RecipeNew from './RecipeNew';
+// import RecipeNew from './RecipeNew';
 import Recipe from './Recipe';
-import { async } from 'q';
-import ShowRecipe from './RecipeShow';
+// import { async } from 'q';
+// import ShowRecipe from './RecipeShow';
 import RecipeDetails from './RecipeDetails';
 import RecipeShow from './RecipeShow';
 import RecipeEdit from './RecipeEdit';
-// import CookNew from './CookNew';
-// import CookShow from './CookShow';
+import CookNew from './CookNew';
+import CookShow from './CookShow';
+// import CookDetails from './CookDetails';
+import CookEdit from './CookEdit';
 
 const router = createBrowserRouter([
 {
@@ -26,10 +28,6 @@ const router = createBrowserRouter([
     loader: async()=>{
       return fetch("http://localhost:8080/api/v1/recipes");
     },
-    },
-    {
-    // path:'add_new_recipe',          jbg, morao sam da se ne pojavljuje
-    // element:<RecipeNew/>
     },
     {
       path: '/:id',
@@ -61,26 +59,25 @@ const router = createBrowserRouter([
         return fetch("http://localhost:8080/api/v1/cookUser");
         },
       },
-      //{
-       // path:'add_new_cook',
-       // element:<CookNew/>
-       // },
-        // {
-        //   path: '/:id',
-        //   element:<RecipeDetails/>,
-        //   loader: async({params}) =>{
-        //     return fetch(`http://localhost:8080/api/v1/recipes/${params.id}`)
+      {
+       path:'add_new_cook',
+       element:<CookNew/>
+       },
+        {
+          path: '/:id',
+          element:<CookShow/>,
+          loader: async({params}) =>{
+            return fetch(`http://localhost:8080/api/v1/cookUser/${params.id}`)
      
-        //       }
-        // },
-        // {
-        //   path: '/:id',
-        //   element:<CookShow/>,
-        //   loader: async({params}) =>{
-        //     return fetch(`http://localhost:8080/api/v1/cookUser/${params.id}`)
-     
-        //       }
-        // },
+              }
+        },
+        {
+          path: 'cookUser/update/:id',
+          element:<CookEdit/>,
+          loader: async({params}) =>{
+            return fetch(`http://localhost:8080/api/v1/cookUser/${params.id}`)
+          }
+        },
   
  
   ]
